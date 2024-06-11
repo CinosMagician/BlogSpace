@@ -15,13 +15,13 @@ body {
 }
 
 a:link {
-  color: rgb(28, 214, 221);
+  color: var(--cyan);
 }
 a:visited {
-  color: rgb(242, 107, 237);
+  color: var(--neonPink);
 }
 a:hover {
-  color: rgb(56, 5, 99);
+  color: var(--galaxyPurple);
 }
 
 .headerRow {
