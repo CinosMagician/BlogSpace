@@ -23,8 +23,8 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
-	if (event.target.hasAttribute('data-id')) {
-		const id = event.target.getAttribute('data-id');
+	if (event.target.hasAttribute('data-id-del')) {
+		const id = event.target.getAttribute('data-id-del');
 
 		const response = await fetch(`/api/blogs/${id}`, {
 			method: 'DELETE',
@@ -38,10 +38,37 @@ const delButtonHandler = async (event) => {
 	}
 };
 
-document
-	.querySelector('.new-blog-form')
-	.addEventListener('submit', newFormHandler);
+const updateButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id-up')) {
+        const id = event.target.getAttribute('data-id-up');
+        try {
+            const response = await fetch(`/blog/${id}`, {
+                method: 'GET',
+            });
+
+            if (response.ok) {
+                document.location.replace(`/update/${id}`);
+            } else {
+                alert('Failed to fetch the blog post');
+            }
+        } catch (error) {
+            console.error('Error fetching blog post:', error);
+            alert('An error occurred while fetching the blog post');
+        }
+    }
+};
+
+
+
 
 document
-	.querySelector('.blog-list')
-	.addEventListener('click', delButtonHandler);
+  .querySelector(".new-blog-form")
+  .addEventListener("submit", newFormHandler);
+
+document
+  .querySelector(".blog-list")
+  .addEventListener("click", delButtonHandler);
+
+document
+  .querySelector(".blog-list")
+  .addEventListener("click", updateButtonHandler);

@@ -1,0 +1,29 @@
+<div class="text">
+    <div class="container blogBoxCont">
+        <div class="row headerRow">
+            <div class="col-8">
+                <h2 class="blogTitle text-uppercase">{{title}}</h2>
+            </div>
+            <div class="col-4">
+                <p class="blogCreate text-right">Created by {{user.username}} on {{format_date date_created}}</p>
+            </div>
+        </div>
+        <p class="text-center blogDescTwo">{{description}}</p>
+    </div>
+    
+    {{#if logged_in}}
+    <form class="edit-blog-form formCont flex-wrap justify-content-center" data-blogid="{{id}}">
+        <div class="p-2">
+            <input type="text" class="form-control customInput" id="blog_title" name="title" value="{{title}}" placeholder="Enter the title">
+        </div>
+        <div class="p-2">
+            <textarea class="form-control customTextarea" id="blog_content" name="content" placeholder="Enter the content" cols="30" rows="5">{{description}}</textarea>
+        </div>
+        <div class="p-2 d-flex justify-content-center">
+            <button class="btn btn-success" type="submit">Update Post</button>
+        </div>
+    </form>
+    {{/if}}
+</div>
+
+<script src="/js/update.js"></script>

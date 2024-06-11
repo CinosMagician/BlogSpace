@@ -35,4 +35,26 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, description } = req.body;
+
+    const [updated] = await Blog.update(
+      { title, description, user_id: req.session.user_id },
+      { where: { id } }
+    );
+
+    if (updated) {
+      const updatedBlog = await Blog.findOne({ where: { id } });
+      res.status(200).json(updatedBlog);
+    } else {
+      res.status(404).json({ message: 'Blog post not found' });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Failed to update blog post' });
+  }
+});
+
 module.exports = router;

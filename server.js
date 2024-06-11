@@ -17,7 +17,7 @@ const hbs = exphbs.create({ helpers });
 
 const sesh = {
   secret: 'outta space',
-  cookie: {},
+  cookie: { maxAge: 30 * 60 * 1000},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

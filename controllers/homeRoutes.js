@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
 
 		res.render('homepage', {
 			blogs,
-			logged_in: req.session.logged_in
+			logged_in: req.session.logged_in,
+			username: req.session.username
 		});
 	} catch (err) {
 		res.status(500).json(err);
@@ -92,6 +93,37 @@ router.get('/signUp', (req, res) => {
 		return;
 	}
 	res.render('signUp');
+});
+
+router.get('/update/:id', withAuth, async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+                {
+                    model: Comment,
+                    include: [User]
+                }
+            ],
+        });
+
+        const blog = blogData.get({ plain: true });
+
+        if (!blog) {
+            res.status(404).json({ message: 'Blog post not found' });
+            return;
+        }
+
+        res.render('editBlog', {
+            ...blog,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router;

@@ -4,6 +4,11 @@ const loginFormHandler = async (event) => {
   const username = document.querySelector('#username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
+  if (!username || !password) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
   if (username && password) {
     const response = await fetch('/api/users/login', {
       method: 'POST',
@@ -14,7 +19,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert(response.statusText);
+      alert("Incorrect Username or Password entered. Please try again.");
     }
   }
 };

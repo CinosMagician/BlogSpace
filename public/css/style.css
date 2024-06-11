@@ -1,0 +1,164 @@
+:root {
+  --galaxyPurple: rgb(91, 43, 145);
+  --neonPink: rgb(214, 75, 203);
+}
+
+body {
+  color: white;
+  background-color: var(--galaxyPurple);
+  background-image: url("https://starwalk.space/gallery/images/what-is-space/1920x1080.jpg");
+  font-family: "Orbitron", sans-serif;
+}
+
+a:link {
+  color: rgb(28, 214, 221);
+}
+a:visited {
+  color: rgb(242, 107, 237);
+}
+a:hover {
+  color: rgb(56, 5, 99);
+}
+
+.headerRow {
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+.navTitle {
+  font-weight: 900;
+  font-size: xx-large;
+}
+
+.login, .signup {
+  display: flex;
+  justify-content: center;
+}
+
+
+.formCont {
+  margin-top: 10px;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+
+.blogBox {
+  margin-top: 8px;
+  border-style: solid;
+}
+
+.blogTitle {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--neonPink);
+}
+
+.blogDesc {
+  border-style: solid;
+  margin-bottom: 5px;
+  padding: 2px;
+  background-color: var(--galaxyPurple);
+}
+
+.blogDescMain {
+  font-weight: 700;
+}
+
+.blogDescTwo {
+  font-size: 25px;
+  font-style: italic;
+}
+
+.blogCreate, .commentOwner{
+  font-weight: bold;
+  font-style: italic;
+  text-align: right;
+  font-size: 12px;
+  padding: 5px;
+  color: var(--neonPink);
+}
+
+.commentOwner {
+  font-size: 14px;
+}
+
+.blogBoxCont {
+  margin-top: 10px;
+  border-style: solid;
+  background-color: var(--galaxyPurple );
+}
+
+.commentCont {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  max-width: 75%;
+  background-color: var(--galaxyPurple);
+  border-style: solid;
+}
+
+.btnComment {
+  margin-top: 10px;
+}
+
+.commentText {
+  font-weight: bold;
+  padding: 10px;
+  background-color: var(--neonPink);
+}
+
+.row {
+  background-color: black;
+}
+
+.btn-success {
+  background-color: var(--galaxyPurple);
+  border-color: var(--neonPink);
+}
+
+.btn-success:hover, .btn-success:active {
+  background-color: var(--neonPink);
+  border-color: var(--galaxyPurple);
+}
+
+.btn-success:focus {
+  background-color: var(--neonPink);
+  border-color: var(--galaxyPurple);
+  box-shadow: 0 0 0 .25rem rgba(214, 75, 203, .5)
+}
+
+.btn-success:focus:active {
+  background-color: var(--neonPink);
+  border-color: var(--galaxyPurple);
+  box-shadow: 0 0 0 .25rem rgba(214, 75, 203, .5)
+}
+
+textarea.customTextarea, input.customInput {
+  background-color: var(--galaxyPurple);
+  color: white;
+  border: 2px solid var(--neonPink);
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.new-blog-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerCustom {
+  display: flex;
+  justify-content: center;
+}
+
+/* .loggedinName {
+  was going to have the username logged up the top to show who is logged in but it was scrapped for now
+} */
