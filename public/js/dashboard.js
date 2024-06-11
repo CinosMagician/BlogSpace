@@ -75,16 +75,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const deleteButtons = document.querySelectorAll(".delete-btn-comment");
 
   updateButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const commentId = e.target.getAttribute("data-id-up");
-      // Handle update logic here, e.g., show update form with the comment data
+    button.addEventListener("click", async (event) => {
+      const commentId = event.target.getAttribute("data-id-up");
+	  if (commentId) {
+        try {
+			const response = await fetch(`/api/comments/${commentId}`, {
+				method: "GET",
+			  });
+          
+          if (response.ok) {
+			document.location.replace(`/api/update/comment/${commentId}`);
+          } else {
+            alert('Failed to fetch comment data');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('An error occurred while fetching the comment');
+        }
+      }
     });
   });
 
   deleteButtons.forEach((button) => {
-    button.addEventListener("click", async (e) => {
-      e.preventDefault(); // Prevent default action, if necessary
-      const commentId = e.target.getAttribute("data-id-del");
+    button.addEventListener("click", async (event) => {
+      event.preventDefault();
+      const commentId = event.target.getAttribute("data-id-del");
 
       if (commentId) {
         try {

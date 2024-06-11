@@ -1,0 +1,19 @@
+<div class="commentCont">
+    <p class="text-center commentText">{{comment.comment_description}}</p>
+    <p class="text-center commentOwner">Posted by {{comment.user.username}} on {{format_date comment.date_created}}</p>
+</div>
+
+{{#if logged_in}}
+<form class="edit-comment-form formCont flex-wrap justify-content-center" data-commentid="{{comment.id}}">
+    <div class="p-2">
+        <textarea class="form-control customTextarea" id="comment_description" name="comment_description"
+            placeholder="Enter your comment" cols="15" rows="2">{{comment.comment_description}}</textarea>
+    </div>
+    <div class="p-2 d-flex justify-content-center">
+        <button class="btn btn-success" type="submit">Update Comment</button>
+    </div>
+</form>
+{{/if}}
+</div>
+
+<script src="/js/updateComment.js"></script>

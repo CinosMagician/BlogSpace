@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Comment.findAll({
+  Comment.findOne({
     where: {
       id: req.params.id,
     },
@@ -45,7 +45,7 @@ router.delete("/:id", withAuth, async (req, res) => {
       },
     });
     if (!commentData) {
-      res.status(404).json({ message: "404 Blog ID not found" });
+      res.status(404).json({ message: "404: Comment ID not found" });
       return;
     }
     res.status(200).json(commentData);
@@ -53,4 +53,42 @@ router.delete("/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.put("/:id", withAuth, async (req, res) => {
+  try {
+    const { comment_description } = req.body;
+
+    const [affectedRows] = await Comment.update(
+      { comment_description },
+      {
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        },
+      }
+    );
+
+    if (affectedRows === 0) {
+      res
+        .status(404)
+        .json({
+          message:
+            "404: Comment ID not found or you don't have permission to update this comment",
+        });
+      return;
+    }
+
+    res.status(200).json({ message: "Comment updated successfully" });
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .json({
+        message: "An error occurred while updating the comment",
+        error: err,
+      });
+  }
+});
+
+
 module.exports = router;

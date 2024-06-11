@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const titleInput = document.getElementById("blog_title");
     const descriptionTextarea = document.getElementById("blog_content");
   
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
   
       const title = titleInput.value.trim();
       const description = descriptionTextarea.value.trim();
