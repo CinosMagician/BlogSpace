@@ -14,11 +14,9 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  // the random number is to assign random users to each post, just used for seeding purposes.
   for (const blog of blogData) {
     await Blog.create({
       ...blog,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 

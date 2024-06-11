@@ -1,18 +1,22 @@
 [
   {
     "title": "This Webpage makes me feel Outta this world!",
-    "description": "Get it? cause it's space themed"
+    "description": "Get it? cause it's space themed",
+    "user_id": 4
   },
   {
     "title": "Pizza or Burgers?",
-    "description": "Someone help me decide once and for all which is better?"
+    "description": "Someone help me decide once and for all which is better?",
+    "user_id": 3
   },
   {
     "title": "Youtube Idea",
-    "description": "I want to make some Tech based YouTube videos, but I'm not quite sure what theme I would go for, any ideas?"
+    "description": "I want to make some Tech based YouTube videos, but I'm not quite sure what theme I would go for, any ideas?",
+    "user_id": 2
   },
   {
     "title": "Just for fun!",
-    "description": "Legit... Just posted for the fun of it!"
+    "description": "Legit... Just posted for the fun of it!",
+    "user_id": 1
   }
 ]
