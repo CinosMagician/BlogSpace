@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
   
         if (response.ok) {
-          alert("Blog post updated successfully!");
           document.location.replace(`/blog/${blogId}`);
         } else {
           const errorData = await response.json();
