@@ -1,6 +1,10 @@
 :root {
   --galaxyPurple: rgb(91, 43, 145);
   --neonPink: rgb(214, 75, 203);
+  --deepBlue: rgb(7, 9, 82);
+  --cyan: rgb(28, 214, 221);
+  --crimsonRed: rgb(39, 5, 5);
+  --nebulaRed: rgb(107, 1, 1);
 }
 
 body {
@@ -115,7 +119,7 @@ a:hover {
 .row {
   background-color: black;
 }
-
+/* success changed from green to theme colors */
 .btn-success {
   background-color: var(--galaxyPurple);
   border-color: var(--neonPink);
@@ -137,6 +141,54 @@ a:hover {
   border-color: var(--galaxyPurple);
   box-shadow: 0 0 0 .25rem rgba(214, 75, 203, .5)
 }
+
+/* delete btn */
+.btn-danger {
+  background-color: var(--crimsonRed);
+  border-color: var(--nebulaRed);
+}
+
+.btn-danger:hover, .btn-danger:active {
+  background-color: var(--nebulaRed);
+  border-color: var(--crimsonRed);
+}
+
+.btn-danger:focus {
+  background-color :var(--nebulaRed);
+  border-color: var(--crimsonRed);;
+  box-shadow: 0 0 0 .25rem rgba(214, 75, 75, 0.5)
+}
+
+.btn-danger:focus:active {
+  background-color: var(--nebulaRed);
+  border-color: var(--crimsonRed);
+  box-shadow: 0 0 0 .25rem rgba(214, 75, 75, 0.5)
+}
+/*  */
+
+/* update btn */
+.btn-primary {
+  background-color: var(--deepBlue);
+  border-color: var(--cyan);
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: var(--cyan);
+  border-color: var(--deepBlue);
+}
+
+.btn-primary:focus {
+  background-color: var(--cyan);
+  border-color: var(--deepBlue);
+  box-shadow: 0 0 0 .25rem rgba(75, 188, 214, 0.5)
+}
+
+.btn-primary:focus:active {
+  background-color: var(--cyan);
+  border-color: var(--deepBlue);
+  box-shadow: 0 0 0 .25rem rgba(75, 188, 214, 0.5)
+}
+/*  */
 
 textarea.customTextarea, input.customInput {
   background-color: var(--galaxyPurple);
