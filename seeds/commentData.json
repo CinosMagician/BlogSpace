@@ -1,7 +1,22 @@
 [
 	{
 		"blog_id": 1,
-		"comment_description": "Even this comment was seeded",
+		"comment_description": "Haaaaa, good one!",
 		"user_id": 1
+	},
+	{
+		"blog_id": 2,
+		"comment_description": "Burgers, so much more variety",
+		"user_id": 2
+	},
+	{
+		"blog_id": 3,
+		"comment_description": "Maybe do some PC builds? I think they are usually pretty good",
+		"user_id": 3
+	},
+	{
+		"blog_id": 4,
+		"comment_description": "... why?",
+		"user_id": 4
 	}
 ]
