@@ -2,6 +2,9 @@ const router = require("express").Router();
 const { Blog, Comment, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+// This file handles any connection that uses /api/update
+
+// Here we are getting a blog post with a specific id ready to update
 router.get("/:id", withAuth, async (req, res) => {
   try {
     const blogPost = await Blog.findOne({
@@ -24,6 +27,7 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
+// Here we are getting a comment with a specific id ready to update
 router.get("/comment/:id", withAuth, async (req, res) => {
   try {
     const userComment = await Comment.findOne({

@@ -1,3 +1,4 @@
+// This script handles all of the events that happen on the dashboard screen, including update and deleting blogs and comments.
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -77,20 +78,20 @@ document.addEventListener("DOMContentLoaded", () => {
   updateButtons.forEach((button) => {
     button.addEventListener("click", async (event) => {
       const commentId = event.target.getAttribute("data-id-up");
-	  if (commentId) {
+      if (commentId) {
         try {
-			const response = await fetch(`/api/comments/${commentId}`, {
-				method: "GET",
-			  });
-          
+          const response = await fetch(`/api/comments/${commentId}`, {
+            method: "GET",
+          });
+
           if (response.ok) {
-			document.location.replace(`/api/update/comment/${commentId}`);
+            document.location.replace(`/api/update/comment/${commentId}`);
           } else {
-            alert('Failed to fetch comment data');
+            alert("Failed to fetch comment data");
           }
         } catch (error) {
-          console.error('Error:', error);
-          alert('An error occurred while fetching the comment');
+          console.error("Error:", error);
+          alert("An error occurred while fetching the comment");
         }
       }
     });

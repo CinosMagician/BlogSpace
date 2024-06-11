@@ -1,3 +1,4 @@
+// Server setup, creating the session and initializing express.
 const path = require('path');
 
 const express = require('express');

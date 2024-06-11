@@ -2,6 +2,9 @@ const router = require('express').Router();
 const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// This file will handle all of our routes that connect with /api/blogs
+
+// This one posts a new blog
 router.post('/', withAuth, async (req, res) => {
   try {
     const newBlog = await Blog.create({
@@ -15,6 +18,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// Here we are deleting a blog with a specific id
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.destroy({
@@ -35,6 +39,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+// Here we are updating a blogpost with a specific id
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const { id } = req.params;

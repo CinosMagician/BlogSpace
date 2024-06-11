@@ -1,3 +1,4 @@
+// Comments Model, used to handle post comments
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 class Comment extends Model {}

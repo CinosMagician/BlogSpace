@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// This file handles any connection that uses /api/users
+
+// This will create a new user, used when signing up to the website
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -16,6 +19,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// This will take the username and password entered and let us attempt to log in
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ 
@@ -50,6 +54,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// This will be used when we select to log out, it will destroy the session and take us back to the homepage logged out.
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

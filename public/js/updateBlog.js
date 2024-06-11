@@ -1,3 +1,4 @@
+// This script is used to handle updating a blog post by the user.
 document.addEventListener("DOMContentLoaded", () => {
     const blogId = document.querySelector(".edit-blog-form").dataset.blogid;
   

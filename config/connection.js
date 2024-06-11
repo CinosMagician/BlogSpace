@@ -1,3 +1,4 @@
+// Our way of connecting requelize to the server to communicate with the database.
 const Sequelize = require('sequelize');
 require('dotenv').config();
 

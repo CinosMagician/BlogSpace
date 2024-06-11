@@ -1,3 +1,4 @@
+// This script handles the button for posting a comment onto a blog post
 const commentFormHandler = async function (event) {
 	event.preventDefault();
 

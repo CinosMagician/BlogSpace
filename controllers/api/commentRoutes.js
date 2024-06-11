@@ -11,6 +11,9 @@ router.get("/", (req, res) => {
     });
 });
 
+// This file will handle all of our routes that connect with /api/comments
+
+// This one will find a comment with a specific id
 router.get("/:id", (req, res) => {
   Comment.findOne({
     where: {
@@ -24,6 +27,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// This will post a new comment
 router.post("/", async (req, res) => {
   try {
     const newComment = await Comment.create({
@@ -36,6 +40,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// This will delete a comment with a specific id
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const commentData = await Comment.destroy({
@@ -54,6 +59,7 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
+// This will update a comment with a specific id
 router.put("/:id", withAuth, async (req, res) => {
   try {
     const { comment_description } = req.body;
@@ -89,6 +95,5 @@ router.put("/:id", withAuth, async (req, res) => {
       });
   }
 });
-
 
 module.exports = router;

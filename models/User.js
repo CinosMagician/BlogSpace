@@ -1,3 +1,4 @@
+// Users Model, used to handle users logins
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');

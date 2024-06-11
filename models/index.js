@@ -1,3 +1,4 @@
+// This file handles our relations for each of the models to connect them.
 const User = require('./User');
 const Blog = require('./Blog');
 const Comment = require('./Comment');

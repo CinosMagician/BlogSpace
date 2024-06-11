@@ -1,3 +1,4 @@
+// This file handles seeding the database with pre-existing data by using the .json files located in the seeds folder.
 const sequelize = require('../config/connection');
 const { User, Blog, Comment } = require('../models');
 
@@ -13,6 +14,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  // the random number is to assign random users to each post, just used for seeding purposes.
   for (const blog of blogData) {
     await Blog.create({
       ...blog,
