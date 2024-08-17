@@ -59,6 +59,8 @@ a:hover {
 
 .blogBox {
   margin-top: 8px;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
   border-style: solid;
 }
 
