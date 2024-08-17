@@ -15,7 +15,7 @@
     {{#if logged_in}}
     <form class="edit-blog-form formCont flex-wrap justify-content-center" data-blogid="{{id}}">
         <div class="p-2">
-            <input type="text" class="form-control customInput" id="blog_title" name="title" value="{{title}}" placeholder="Enter the title">
+            <input type="text" class="form-control customInput" id="blog_title" name="title" value="{{title}}" placeholder="Enter the title" maxlength="50">
         </div>
         <div class="p-2">
             <textarea class="form-control customTextarea" id="blog_content" name="content" placeholder="Enter the content" cols="30" rows="5">{{description}}</textarea>
